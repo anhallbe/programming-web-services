@@ -8,7 +8,14 @@
                 <xs:element name="name" type="xs:string"/>
                 <xs:element name="university" type="xs:string"/>
                 <xs:element name="degree" type="xs:string"/>
-                <xs:element name="year" type="xs:int"/>
+                <!--<xs:element name="year" type="xs:int"/> !-->
+                <xs:element name="year">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                            <xs:totalDigits value="4"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
                 <xs:element name="courses">
                     <xs:complexType>
                         <xs:sequence>
