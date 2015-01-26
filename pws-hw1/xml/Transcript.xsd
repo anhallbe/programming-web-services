@@ -16,10 +16,21 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <xs:element name="courses">
+                <xs:element name="courses" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="course" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="courseName" type="xs:string"/>
+                            <xs:element name="courseCode" type="xs:string"/>
+                            <xs:element name="grade" type="xs:int"/>
+                            <!--<xs:element name="course" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="courseName" type="xs:string"/>
+                                        <xs:element name="courseCode" type="xs:string"/>
+                                        <xs:element name="grade" type="xs:int"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element> !-->
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
