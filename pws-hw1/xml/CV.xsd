@@ -11,6 +11,7 @@
             <xs:element name="address" type="xs:string"/>
             <xs:element name="city" type="xs:string"/>
             <xs:element name="country" type="xs:string"/>
+            <xs:element name="phone" type="xs:string"/>
             <xs:element name="email">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
@@ -18,6 +19,7 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
+            <xs:element name="about" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
