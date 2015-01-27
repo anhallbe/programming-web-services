@@ -8,12 +8,6 @@
             <xs:element name="name" type="xs:string"/>
             <xs:element name="description" type="xs:string"/>
             <xs:element name="keywords" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
-                <!--<xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="keyword" m />
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>!-->
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

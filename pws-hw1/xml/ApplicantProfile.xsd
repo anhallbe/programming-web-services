@@ -14,6 +14,27 @@
                 <xs:element name="city" type="xs:string" minOccurs="1" maxOccurs="1"/>
                 <xs:element name="country" type="xs:string" minOccurs="1" maxOccurs="1"/>
                 <xs:element name="about" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="keywords">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="keyword" type="xs:token" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="desiredCompanies">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="company" type="xs:string" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="desiredJobType">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="type" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="education" minOccurs="0" maxOccurs="1">
                     <xs:complexType>
                         <xs:sequence>
