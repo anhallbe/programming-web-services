@@ -20,6 +20,21 @@
                 </xs:simpleType>
             </xs:element>
             <xs:element name="about" type="xs:string"/>
+            <xs:element name="references">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reference" minOccurs="2" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="refName" type="xs:string" maxOccurs="1"/>
+                                    <xs:element name="refAbout" type="xs:string" maxOccurs="1"/>
+                                    <xs:element name="refContactInfo" type="xs:string" maxOccurs="1"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
