@@ -8,6 +8,20 @@
             <xs:element name="name" type="xs:string"/>
             <xs:element name="description" type="xs:string"/>
             <xs:element name="keywords" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="availablePositions" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="position" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                    <xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
