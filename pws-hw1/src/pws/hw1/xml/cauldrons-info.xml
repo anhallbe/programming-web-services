@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<company
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='file:/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/CompanyInfo.xsd'>
+    <name>Cauldrons Inc.</name>
+    <description>A couldron manufacturing company based in Diagon Alley.</description>
+    <keywords>magic, cauldron, money, manufacturing</keywords>
+    <availablePositions>
+        <position>
+            <title>Cashier</title>
+            <description>Looking for an experienced person with interests in sales, money laundering and magic.</description>
+        </position>
+    </availablePositions>
+
+</company>

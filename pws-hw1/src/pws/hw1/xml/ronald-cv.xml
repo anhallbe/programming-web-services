@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<cv
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='file:/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/CV.xsd'>
+    <surname>Weasley</surname>
+    <lastname>Ronald</lastname>
+    <birthdate>1990-12-13</birthdate>
+    <address>Crow's Nest 2</address>
+    <city>Muggleton</city>
+    <country>UK</country>
+    <phone>0101010101</phone>
+    <email>ron@weasleys.com</email>
+    <about>Just another red-headed wizard.</about>
+    <references>
+        <reference>
+            <refName>George Weasley</refName>
+            <refAbout>My brother George</refAbout>
+            <refContactInfo>george@weasleys.com</refContactInfo>
+        </reference>
+        <reference>
+            <refName>Fred Weasley</refName>
+            <refAbout>My brother Fred</refAbout>
+            <refContactInfo>fred@weasleys.com</refContactInfo>
+        </reference>
+    </references>
+
+</cv>

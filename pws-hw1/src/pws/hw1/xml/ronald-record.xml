@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<employmentRecord
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='file:/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/EmploymentRecord.xsd'>
+    <surname>Weasley</surname>
+    <lastname>Ronald</lastname>
+    <employments>
+        <employment>
+            <companyName>Cauldrons Inc.</companyName>
+            <start>2010-12-13</start>
+            <end>2011-12-13</end>
+            <monthlySalary>10000</monthlySalary>
+        </employment>
+        <employment>
+            <companyName>Weasley Tricks and Candy Canes</companyName>
+            <start>2005-12-13</start>
+            <end>2008-12-13</end>
+            <monthlySalary>7000</monthlySalary>
+        </employment>
+        <employment>
+            <companyName>Diagon Alley Custodials</companyName>
+            <start>2012-12-13</start>
+            <end>2014-12-13</end>
+            <monthlySalary>12000</monthlySalary>
+        </employment>
+    </employments>
+
+</employmentRecord>
