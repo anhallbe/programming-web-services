@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-
-
 <cv
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
     xsi:noNamespaceSchemaLocation='file:/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/CV.xsd'>
-    <surname>Weasley</surname>
-    <lastname>Ronald</lastname>
+    <surname>Ronald</surname>
+    <lastname>Weasley</lastname>
     <birthdate>1990-12-13</birthdate>
     <address>Crow's Nest 2</address>
     <city>Muggleton</city>
