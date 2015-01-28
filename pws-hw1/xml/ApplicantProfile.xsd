@@ -105,6 +105,21 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="recommendedJobs" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="job" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                    <xs:element name="company" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                    <xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
