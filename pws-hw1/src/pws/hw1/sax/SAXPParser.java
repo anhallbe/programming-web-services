@@ -2,6 +2,7 @@ package pws.hw1.sax;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.ParserConfigurationException;
@@ -17,13 +18,13 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 public class SAXPParser {
     
-    public static Transcript parseTranscript() {
-        SAXTranscriptHandler handler = new SAXTranscriptHandler();
+    public static EmploymentRecord parseEmploymentRecord() {
+        SAXEmploymentRecordHandler handler = new SAXEmploymentRecordHandler();
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
             
-            saxParser.parse(new File("/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/hogwarts-transcript.xml"), handler);
+            saxParser.parse(new File("/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/ronald-record.xml"), handler);
             
         } catch (ParserConfigurationException ex) {
             Logger.getLogger(SAXPParser.class.getName()).log(Level.SEVERE, null, ex);
@@ -33,17 +34,20 @@ public class SAXPParser {
             Logger.getLogger(SAXPParser.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        return handler.transcript;
+        return handler.record;
     }
     
 //    public static void main(String[] args) {
-//        Transcript transcript = SAXPParser.parseTranscript();
-//        System.out.println(transcript);
+//        EmploymentRecord record = SAXPParser.parseEmploymentRecord();
+//        System.out.println(record);
+//        System.out.println("______________________________________________________");
+//        for(Employment e : record.getEmployments())
+//            System.out.println(e.getCompany());
 //    }
     
-    private static class SAXTranscriptHandler extends DefaultHandler {
-        public Transcript transcript = new Transcript();
-        private Course course;
+    private static class SAXEmploymentRecordHandler extends DefaultHandler {
+        public EmploymentRecord record = new EmploymentRecord();
+        private Employment employment;
         private String content = "";
 
         @Override
@@ -54,11 +58,11 @@ public class SAXPParser {
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
             switch(qName) {
-                case "courses":
-                    course = new Course();
+                case "employment":
+                    employment = new Employment();
                     break;
-                case "transcript":
-                    transcript = new Transcript();
+                case "employmentRecord":
+                    record = new EmploymentRecord();
                     break;
             }
             content = "";
@@ -67,31 +71,37 @@ public class SAXPParser {
         @Override
         public void endElement(String uri, String localName, String qName) throws SAXException {
             switch(qName) {
-                case "name":
-                    transcript.setName(content);
+                case "surname":
+                    record.setSurName(content);
                     break;
-                case "university":
-                    transcript.setUniversity(content);
+                case "lastname":
+                    record.setLastName(content);
                     break;
-                case "degree":
-                    transcript.setDegree(content);
+                case "companyName":
+                    employment.setCompany(content);
                     break;
-                case "year":
-                    transcript.setYear(Integer.parseInt(content));
+                case "start":
+                    employment.setStart(stringToDate(content));
                     break;
-                case "courseName":
-                    course.setName(content);
+                case "end":
+                    employment.setEnd(stringToDate(content));
                     break;
-                case "courseCode":
-                    course.setCode(content);
+                case "monthlySalary":
+                    employment.setSalary(Integer.parseInt(content));
                     break;
-                case "grade":
-                    course.setGrade(Integer.parseInt(content));
-                    break;
-                case "courses":
-                    transcript.addCourse(course);
+                case "employment":
+                    record.addEmployment(employment);
                     break;
             }
+        }
+        
+        private Date stringToDate(String date) {
+            String[] dateStrings = date.split("-");
+            int year = Integer.parseInt(dateStrings[0]);
+            int month = Integer.parseInt(dateStrings[1]);
+            int day = Integer.parseInt(dateStrings[2]);
+            Date result = new Date(year, month, day);
+            return result;
         }
     }
 }
