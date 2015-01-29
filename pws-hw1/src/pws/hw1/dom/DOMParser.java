@@ -24,9 +24,11 @@ import org.xml.sax.SAXException;
  */
 public class DOMParser {
 
-    private CV cv = new CV();
+  //  private CV cv = new CV();
     
-    public DOMParser() {
+    public static CV parseCV() {
+        CV cv = new CV();
+        
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setValidating(true);
         factory.setNamespaceAware(true);
@@ -44,9 +46,8 @@ public class DOMParser {
             NodeList children = root.getChildNodes();
             
             for(Node child = root.getFirstChild(); child != null; child = child.getNextSibling()) {
-                processNode(child);
+                processNode(child, cv);
             }
-            System.out.println("CV:\n" + cv);
             
         } catch (ParserConfigurationException ex) {
             System.out.println(ex);
@@ -55,13 +56,16 @@ public class DOMParser {
         } catch (IOException ex) {
             System.out.println(ex);
         }
+        
+        return cv;
     }
     
     public static void main(String[] args) {
-        new DOMParser();
+        CV cv = DOMParser.parseCV();
+        System.out.println("CV:\n" + cv);
     }
     
-    private void processNode(Node node) {
+    private static void processNode(Node node, CV cv) {
         switch(node.getNodeName()) {
             case "surname":
                 cv.setSurName(node.getTextContent());
