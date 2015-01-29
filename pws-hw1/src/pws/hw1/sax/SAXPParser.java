@@ -15,9 +15,9 @@ import org.xml.sax.helpers.DefaultHandler;
  *
  * @author andreas
  */
-public class TranscriptParser {
+public class SAXPParser {
     
-    public TranscriptParser() {
+    public SAXPParser() {
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
@@ -25,11 +25,11 @@ public class TranscriptParser {
             saxParser.parse(new File("/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/hogwarts-transcript.xmll"), new SAXTranscriptHandler());
             
         } catch (ParserConfigurationException ex) {
-            Logger.getLogger(TranscriptParser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SAXPParser.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SAXException ex) {
-            Logger.getLogger(TranscriptParser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SAXPParser.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(TranscriptParser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SAXPParser.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         
