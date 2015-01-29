@@ -60,10 +60,10 @@ public class DOMParser {
         return cv;
     }
     
-    public static void main(String[] args) {
-        CV cv = DOMParser.parseCV();
-        System.out.println("CV:\n" + cv);
-    }
+//    public static void main(String[] args) {
+//        CV cv = DOMParser.parseCV();
+//        System.out.println("CV:\n" + cv);
+//    }
     
     private static void processNode(Node node, CV cv) {
         switch(node.getNodeName()) {
