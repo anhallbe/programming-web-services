@@ -41,36 +41,36 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CompanyType }
+     * Create an instance of {@link CompanyInfo }
      * 
      */
-    public CompanyType createCompanyType() {
-        return new CompanyType();
+    public CompanyInfo createCompanyType() {
+        return new CompanyInfo();
     }
 
     /**
      * Create an instance of {@link CompanyType.AvailablePositions }
      * 
      */
-    public CompanyType.AvailablePositions createCompanyTypeAvailablePositions() {
-        return new CompanyType.AvailablePositions();
+    public CompanyInfo.AvailablePositions createCompanyTypeAvailablePositions() {
+        return new CompanyInfo.AvailablePositions();
     }
 
     /**
      * Create an instance of {@link CompanyType.AvailablePositions.Position }
      * 
      */
-    public CompanyType.AvailablePositions.Position createCompanyTypeAvailablePositionsPosition() {
-        return new CompanyType.AvailablePositions.Position();
+    public CompanyInfo.AvailablePositions.Position createCompanyTypeAvailablePositionsPosition() {
+        return new CompanyInfo.AvailablePositions.Position();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CompanyType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link CompanyInfo }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "company")
-    public JAXBElement<CompanyType> createCompany(CompanyType value) {
-        return new JAXBElement<CompanyType>(_Company_QNAME, CompanyType.class, null, value);
+    public JAXBElement<CompanyInfo> createCompany(CompanyInfo value) {
+        return new JAXBElement<CompanyInfo>(_Company_QNAME, CompanyInfo.class, null, value);
     }
 
 }

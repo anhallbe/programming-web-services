@@ -20,18 +20,15 @@ import javax.xml.transform.stream.StreamSource;
  * @author andreas
  */
 public class JAXBParser {
-    public static CompanyType parseCompany(String xmlSource) {
+    public static CompanyInfo parseCompany(String xmlSource) {
         try {
             JAXBContext jc = JAXBContext.newInstance("pws.hw1.jaxb");
             Unmarshaller u = jc.createUnmarshaller();
 //            Source source = new StreamSource(new File("/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/cauldrons-info.xml"));
             Source source = new StreamSource(new File(xmlSource));
-            JAXBElement<CompanyType> root = u.unmarshal(source, CompanyType.class);
-            CompanyType company = root.getValue();
-            
-            System.out.println(company.getName());
-            System.out.println(company.getDescription());
-            System.out.println(company.getKeywords());
+            JAXBElement<CompanyInfo> root = u.unmarshal(source, CompanyInfo.class);
+            CompanyInfo company = root.getValue();
+            return company;
         } catch (JAXBException ex) {
             Logger.getLogger(JAXBParser.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -41,6 +38,14 @@ public class JAXBParser {
     
     public static void main(String[] args) {
         String path = "/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/cauldrons-info.xml";
-        parseCompany(path);
+        CompanyInfo company = parseCompany(path);
+        System.out.println(company.getName());
+        System.out.println(company.getDescription());
+        System.out.println(company.getKeywords());
+        for(CompanyInfo.AvailablePositions.Position p : company.getAvailablePositions().getPosition()) {
+            System.out.println("----------------------");
+            System.out.println(p.getTitle());
+            System.out.println(p.getDescription());
+        }
     }
 }

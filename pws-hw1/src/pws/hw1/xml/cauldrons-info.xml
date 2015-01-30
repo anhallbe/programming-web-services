@@ -17,6 +17,10 @@ and open the template in the editor.
             <title>Cashier</title>
             <description>Looking for an experienced person with interests in sales, money laundering and magic.</description>
         </position>
+        <position>
+            <title>Not Cashier</title>
+            <description>asd asd asd asd </description>
+        </position>
     </availablePositions>
 
 </company>

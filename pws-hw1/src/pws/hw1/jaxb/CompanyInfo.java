@@ -66,7 +66,7 @@ import javax.xml.bind.annotation.XmlType;
     "keywords",
     "availablePositions"
 })
-public class CompanyType {
+public class CompanyInfo {
 
     @XmlElement(required = true)
     protected String name;
@@ -75,7 +75,7 @@ public class CompanyType {
     @XmlElement(required = true)
     protected List<String> keywords;
     @XmlElement(required = true)
-    protected CompanyType.AvailablePositions availablePositions;
+    protected CompanyInfo.AvailablePositions availablePositions;
 
     /**
      * Gets the value of the name property.
@@ -162,7 +162,7 @@ public class CompanyType {
      *     {@link CompanyType.AvailablePositions }
      *     
      */
-    public CompanyType.AvailablePositions getAvailablePositions() {
+    public CompanyInfo.AvailablePositions getAvailablePositions() {
         return availablePositions;
     }
 
@@ -174,7 +174,7 @@ public class CompanyType {
      *     {@link CompanyType.AvailablePositions }
      *     
      */
-    public void setAvailablePositions(CompanyType.AvailablePositions value) {
+    public void setAvailablePositions(CompanyInfo.AvailablePositions value) {
         this.availablePositions = value;
     }
 
@@ -215,7 +215,7 @@ public class CompanyType {
     })
     public static class AvailablePositions {
 
-        protected List<CompanyType.AvailablePositions.Position> position;
+        protected List<CompanyInfo.AvailablePositions.Position> position;
 
         /**
          * Gets the value of the position property.
@@ -239,9 +239,9 @@ public class CompanyType {
          * 
          * 
          */
-        public List<CompanyType.AvailablePositions.Position> getPosition() {
+        public List<CompanyInfo.AvailablePositions.Position> getPosition() {
             if (position == null) {
-                position = new ArrayList<CompanyType.AvailablePositions.Position>();
+                position = new ArrayList<CompanyInfo.AvailablePositions.Position>();
             }
             return this.position;
         }
