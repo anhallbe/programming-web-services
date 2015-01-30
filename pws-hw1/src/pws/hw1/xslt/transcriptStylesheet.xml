@@ -25,6 +25,9 @@
                             <xsl:element name="grade">
                                 <xsl:value-of select="grade"/>
                             </xsl:element>
+                            <xsl:element name="credits">
+                                <xsl:value-of select="credits"/>
+                            </xsl:element>
                         </xsl:element>
                     </xsl:for-each>
                     <!--<xsl:element name="courses">

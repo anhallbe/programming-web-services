@@ -19,7 +19,14 @@ import javax.xml.transform.stream.StreamSource;
  * @author andreas
  */
 public class XSLTParser {
-    public static void parseXSLT(String stylesheetPath, String transcriptPath, String profilePath) {
+    
+    /**
+     * Processes the Transcript XML given by transcriptPath to generate the "university" part of the applicant profile.
+     * @param stylesheetPath
+     * @param transcriptPath
+     * @param profilePath 
+     */
+    public static void parseTranscript(String stylesheetPath, String transcriptPath, String profilePath) {
         File transcript = new File(transcriptPath);
         File profile = new File(profilePath);
         File stylesheet = new File(stylesheetPath);
@@ -42,7 +49,7 @@ public class XSLTParser {
 //        String input = "/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/hogwarts-transcript.xml";
 //        String output = "/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xslt/applicant-profile-test.xml";
 //        
-//        parseXSLT(stylesheet, input, output);
+//        parseTranscript(stylesheet, input, output);
 //        System.out.println("Done!");
 //    }
 }

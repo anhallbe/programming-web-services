@@ -29,6 +29,7 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
+                            <xs:element name="credits" type="xs:decimal"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
