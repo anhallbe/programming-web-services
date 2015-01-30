@@ -43,7 +43,7 @@ public class XSLTParser {
             Logger.getLogger(XSLTParser.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+//    
 //    public static void main(String[] args) {
 //        String stylesheet = "/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xslt/transcriptStylesheet.xml";
 //        String input = "/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/hogwarts-transcript.xml";

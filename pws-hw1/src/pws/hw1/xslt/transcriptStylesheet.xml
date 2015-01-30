@@ -30,14 +30,12 @@
                             </xsl:element>
                         </xsl:element>
                     </xsl:for-each>
-                    <!--<xsl:element name="courses">
-                        <xsl:for-each select="/transcript/courses">
-                            <xsl:element name="courseName">
-                                <xsl:value-of select="/transcript/courses/courseName" />
-                            </xsl:element>
-                        </xsl:element>
-                    </xsl:element>!-->
                 </xsl:element>
+            </xsl:element>
+            <xsl:element name="GPA">
+                <xsl:variable name="totalGrade" select="sum(/transcript/courses/grade)" />
+                <xsl:variable name="totalCredits" select="sum(/transcript/courses/credits)" />
+                <xsl:value-of select="($totalGrade) div ($totalCredits)"/>
             </xsl:element>
         </xsl:element>
     </xsl:template>

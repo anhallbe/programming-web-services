@@ -24,7 +24,6 @@ public class JAXBParser {
         try {
             JAXBContext jc = JAXBContext.newInstance("pws.hw1.jaxb");
             Unmarshaller u = jc.createUnmarshaller();
-//            Source source = new StreamSource(new File("/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/cauldrons-info.xml"));
             Source source = new StreamSource(new File(xmlSource));
             JAXBElement<CompanyInfo> root = u.unmarshal(source, CompanyInfo.class);
             CompanyInfo company = root.getValue();
@@ -34,18 +33,5 @@ public class JAXBParser {
         }
         
         return null;
-    }
-    
-    public static void main(String[] args) {
-        String path = "/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/cauldrons-info.xml";
-        CompanyInfo company = parseCompany(path);
-        System.out.println(company.getName());
-        System.out.println(company.getDescription());
-        System.out.println(company.getKeywords());
-        for(CompanyInfo.AvailablePositions.Position p : company.getAvailablePositions().getPosition()) {
-            System.out.println("----------------------");
-            System.out.println(p.getTitle());
-            System.out.println(p.getDescription());
-        }
     }
 }
