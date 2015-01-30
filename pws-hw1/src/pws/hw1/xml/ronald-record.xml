@@ -8,7 +8,7 @@ and open the template in the editor.
 
 <employmentRecord
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-    xsi:noNamespaceSchemaLocation='file:/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/EmploymentRecord.xsd'>
+    xsi:noNamespaceSchemaLocation='file:src/pws/hw1/xml/EmploymentRecord.xsd'>
     <surname>Weasley</surname>
     <lastname>Ronald</lastname>
     <employments>

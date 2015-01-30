@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cv
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-    xsi:noNamespaceSchemaLocation='file:/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/CV.xsd'>
+    xsi:noNamespaceSchemaLocation='file:src/pws/hw1/xml/CV.xsd'>
     <surname>Ronald</surname>
     <lastname>Weasley</lastname>
     <birthdate>1990-12-13</birthdate>

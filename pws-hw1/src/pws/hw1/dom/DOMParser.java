@@ -26,7 +26,7 @@ public class DOMParser {
 
   //  private CV cv = new CV();
     
-    public static CV parseCV(String xmlSource) {
+    public static CV parseCV(String xmlSource, String schema) {
         CV cv = new CV();
         
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -34,7 +34,7 @@ public class DOMParser {
         factory.setNamespaceAware(true);
         factory.setIgnoringElementContentWhitespace(true);
         factory.setAttribute("http://java.sun.com/xml/jaxp/properties/schemaLanguage", "http://www.w3.org/2001/XMLSchema");
-        factory.setAttribute("http://java.sun.com/xml/jaxp/properties/schemaSource", "/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/CV.xsd");
+        factory.setAttribute("http://java.sun.com/xml/jaxp/properties/schemaSource", schema);
         
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
