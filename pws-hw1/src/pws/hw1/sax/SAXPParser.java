@@ -18,13 +18,14 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 public class SAXPParser {
     
-    public static EmploymentRecord parseEmploymentRecord() {
+    public static EmploymentRecord parseEmploymentRecord(String xmlPath) {
         SAXEmploymentRecordHandler handler = new SAXEmploymentRecordHandler();
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
             
-            saxParser.parse(new File("/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/ronald-record.xml"), handler);
+//            saxParser.parse(new File("/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/ronald-record.xml"), handler);
+            saxParser.parse(new File(xmlPath), handler);
             
         } catch (ParserConfigurationException ex) {
             Logger.getLogger(SAXPParser.class.getName()).log(Level.SEVERE, null, ex);

@@ -26,7 +26,7 @@ public class DOMParser {
 
   //  private CV cv = new CV();
     
-    public static CV parseCV() {
+    public static CV parseCV(String xmlSource, String schemaSource) {
         CV cv = new CV();
         
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -38,7 +38,8 @@ public class DOMParser {
         
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse(new File("/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/ronald-cv.xml"));
+//            Document document = builder.parse(new File("/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/ronald-cv.xml"));
+            Document document = builder.parse(new File(xmlSource));
             
 //            System.out.println("Root element :" + document.getDocumentElement().getNodeName());
             

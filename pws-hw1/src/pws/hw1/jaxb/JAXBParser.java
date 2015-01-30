@@ -20,11 +20,12 @@ import javax.xml.transform.stream.StreamSource;
  * @author andreas
  */
 public class JAXBParser {
-    public static CompanyType parseCompany() {
+    public static CompanyType parseCompany(String xmlSource) {
         try {
             JAXBContext jc = JAXBContext.newInstance("pws.hw1.jaxb");
             Unmarshaller u = jc.createUnmarshaller();
-            Source source = new StreamSource(new File("/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/cauldrons-info.xml"));
+//            Source source = new StreamSource(new File("/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/cauldrons-info.xml"));
+            Source source = new StreamSource(new File(xmlSource));
             JAXBElement<CompanyType> root = u.unmarshal(source, CompanyType.class);
             CompanyType company = root.getValue();
             
@@ -39,6 +40,7 @@ public class JAXBParser {
     }
     
     public static void main(String[] args) {
-        parseCompany();
+        String path = "/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/cauldrons-info.xml";
+        parseCompany(path);
     }
 }
