@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                version="1.0">
+    <xsl:template match="/">
+        <xsl:element name="education">
+            <xsl:element name="academicRecord">
+                <xsl:element name="university">
+                    <xsl:value-of select="/transcript/university" />
+                </xsl:element>
+                <xsl:element name="degree">
+                    <xsl:value-of select="/transcript/degree" />
+                </xsl:element>
+                <xsl:element name="year">
+                    <xsl:value-of select="/transcript/year" />
+                </xsl:element>
+                <xsl:for-each select="/transcript/courses">
+                    <xsl:element name="courses">
+                        <xsl:element name="courseName">
+                            <xsl:value-of select="courseName"/>
+                        </xsl:element>
+                        <xsl:element name="courseCode">
+                            <xsl:value-of select="courseCode"/>
+                        </xsl:element>
+                        <xsl:element name="grade">
+                            <xsl:value-of select="grade"/>
+                        </xsl:element>
+                        <xsl:element name="credits">
+                            <xsl:value-of select="credits"/>
+                        </xsl:element>
+                    </xsl:element>
+                </xsl:for-each>
+            </xsl:element>
+        </xsl:element>
+        <xsl:element name="GPA">
+            <xsl:variable name="totalGrade" select="sum(/transcript/courses/grade)" />
+            <xsl:variable name="totalCredits" select="sum(/transcript/courses/credits)" />
+            <xsl:value-of select="($totalGrade) div ($totalCredits)"/>
+        </xsl:element>
+    </xsl:template>
+</xsl:stylesheet>

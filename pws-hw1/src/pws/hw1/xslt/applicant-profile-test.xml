@@ -1,1 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?><profile><education><academicRecord><university>Hogwarts</university><degree>B.S in Wand Engineering</degree><year>2014</year><courses><courseName>The basics of Harry Potter</courseName><courseCode>HP101</courseCode><grade>3</grade><credits>2</credits></courses><courses><courseName>The History of Hogwarts</courseName><courseCode>HP102</courseCode><grade>4</grade><credits>5</credits></courses><courses><courseName>The Five Laws of Wand Mechanics</courseName><courseCode>HP204</courseCode><grade>5</grade><credits>2</credits></courses></academicRecord></education><GPA>1.3333333333333333</GPA></profile>
+<?xml version="1.0" encoding="UTF-8"?>
+<profile>
+    <education>
+        <academicRecord>
+            <university>Hogwarts</university>
+            <degree>B.S in Wand Engineering</degree>
+            <year>2014</year>
+            <courses>
+                <courseName>The basics of Harry Potter</courseName>
+                <courseCode>HP101</courseCode>
+                <grade>3</grade>
+                <credits>2</credits>
+            </courses>
+            <courses>
+                <courseName>The History of Hogwarts</courseName>
+                <courseCode>HP102</courseCode>
+                <grade>4</grade>
+                <credits>5</credits>
+            </courses>
+            <courses>
+                <courseName>The Five Laws of Wand Mechanics</courseName>
+                <courseCode>HP204</courseCode>
+                <grade>5</grade>
+                <credits>2</credits>
+            </courses>
+        </academicRecord>
+    </education>
+    <GPA>1.3333333333333333</GPA>
+</profile>

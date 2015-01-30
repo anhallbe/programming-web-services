@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="file:/home/andreas/Development/programming-web-services/pws-hw1/xml/Transcript.xsd" uri="xml-resources/jaxb/TestTranscript/Transcript.xsd"/>
+    <system systemId="file:/C:/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/ApplicantProfile.xsd" uri="xml-resources/jaxb/ApplicantProfile/ApplicantProfile.xsd"/>
 </catalog>

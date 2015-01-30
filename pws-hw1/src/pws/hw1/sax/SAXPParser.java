@@ -38,6 +38,26 @@ public class SAXPParser {
         return handler.record;
     }
     
+    public static Transcript parseTranscript(String xmlPath) {
+        SAXTranscriptHandler handler = new SAXTranscriptHandler();
+        try {
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser saxParser = factory.newSAXParser();
+            
+//            saxParser.parse(new File("/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/ronald-record.xml"), handler);
+            saxParser.parse(new File(xmlPath), handler);
+            
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(SAXPParser.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SAXException ex) {
+            Logger.getLogger(SAXPParser.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(SAXPParser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return handler.transcript;
+    }
+    
 //    public static void main(String[] args) {
 //        EmploymentRecord record = SAXPParser.parseEmploymentRecord();
 //        System.out.println(record);
@@ -103,6 +123,64 @@ public class SAXPParser {
             int day = Integer.parseInt(dateStrings[2]);
             Date result = new Date(year, month, day);
             return result;
+        }
+    }
+    
+    private static class SAXTranscriptHandler extends DefaultHandler {
+        public Transcript transcript = new Transcript();
+        private Course course;
+        private String content = "";
+
+        @Override
+        public void characters(char[] ch, int start, int length) throws SAXException {
+            content = String.copyValueOf(ch, start, length).trim();
+        }
+
+        @Override
+        public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+            switch(qName) {
+                case "transcript":
+                    transcript = new Transcript();
+                    break;
+                case "courses":
+                    course = new Course();
+                    break;
+            }
+            content = "";
+        }
+
+        @Override
+        public void endElement(String uri, String localName, String qName) throws SAXException {
+            switch(qName) {
+                case "name":
+                    transcript.setName(content);
+                    break;
+                case "university":
+                    transcript.setUniversity(content);
+                    break;
+                case "degree":
+                    transcript.setDegree(content);
+                    break;
+                case "year":
+                    transcript.setYear(Integer.parseInt(content));
+                    break;
+                case "courseName":
+                    course.setName(content);
+                    break;
+                case "courseCode":
+                    course.setCode(content);
+                    break;
+                case "grade":
+                    course.setGrade(Integer.parseInt(content));
+                    break;
+                case "credits":
+                    course.setCredits(Integer.parseInt(content));
+                    break;
+                
+                case "courses":
+                    transcript.addCourse(course);
+                    break;
+            }
         }
     }
 }
