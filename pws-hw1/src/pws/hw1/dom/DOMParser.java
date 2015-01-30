@@ -26,7 +26,7 @@ public class DOMParser {
 
   //  private CV cv = new CV();
     
-    public static CV parseCV(String xmlSource, String schemaSource) {
+    public static CV parseCV(String xmlSource) {
         CV cv = new CV();
         
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
