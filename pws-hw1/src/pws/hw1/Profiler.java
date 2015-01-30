@@ -60,7 +60,7 @@ public class Profiler {
             Logger.getLogger(Profiler.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-//        processTranscript();
+        processGPA();
     }
     
     private void initObjects() {
@@ -78,10 +78,11 @@ public class Profiler {
         transcript = SAXPParser.parseTranscript(transcriptXML);
     }
     
-    private void processTranscript() {
-        String stylesheet = "src/pws/hw1/xslt/transcriptStylesheet.xml";
-        String transcriptSource = "src/pws/hw1/xml/hogwarts-transcript.xml";
-        XSLTParser.parseTranscript(stylesheet, transcriptSource, PROFILE_PATH);
+    private void processGPA() {
+        String stylesheet = "src/pws/hw1/xslt/gpaStylesheet.xsl";
+        String profileSource = PROFILE_PATH;
+        String result = "src/pws/hw1/xml/result.xml";
+        XSLTParser.processGPA(stylesheet, profileSource, result);
     }
 
     private void initProfile() {
