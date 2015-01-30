@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<profile
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='file:/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/ApplicantProfile.xsd'>
+    <surname></surname>
+    <lastname></lastname>
+    <birthdate></birthdate>
+    <email></email>
+    <phone></phone>
+    <address></address>
+    <city></city>
+    <country></country>
+    <about></about>
+    <keywords>
+        <keyword></keyword>
+        <keyword></keyword>
+        <keyword></keyword>
+    </keywords>
+    <desiredCompanies>
+        <company></company>
+        <company></company>
+        <company></company>
+    </desiredCompanies>
+    <desiredJobType>
+        <type></type>
+    </desiredJobType>
+    <education>
+        <academicRecord>
+            <university></university>
+            <degree></degree>
+            <year></year>
+            <courses>
+                <courseName></courseName>
+                <courseCode></courseCode>
+                <grade></grade>
+            </courses>
+            <courses>
+                <courseName></courseName>
+                <courseCode></courseCode>
+                <grade></grade>
+            </courses>
+            <courses>
+                <courseName></courseName>
+                <courseCode></courseCode>
+                <grade></grade>
+            </courses>
+        </academicRecord>
+        <academicRecord>
+            <university></university>
+            <degree></degree>
+            <year></year>
+        </academicRecord>
+        <academicRecord>
+            <university></university>
+            <degree></degree>
+            <year></year>
+        </academicRecord>
+    </education>
+    <employments>
+        <employment>
+            <companyName></companyName>
+            <companyDescription></companyDescription>
+            <start></start>
+            <end></end>
+            <monthlySalary></monthlySalary>
+        </employment>
+        <employment>
+            <companyName></companyName>
+            <companyDescription></companyDescription>
+            <start></start>
+            <end></end>
+            <monthlySalary></monthlySalary>
+        </employment>
+        <employment>
+            <companyName></companyName>
+            <companyDescription></companyDescription>
+            <start></start>
+            <end></end>
+            <monthlySalary></monthlySalary>
+        </employment>
+    </employments>
+    <references>
+        <reference>
+            <refName></refName>
+            <refAbout></refAbout>
+            <refContactInfo></refContactInfo>
+        </reference>
+        <reference>
+            <refName></refName>
+            <refAbout></refAbout>
+            <refContactInfo></refContactInfo>
+        </reference>
+        <reference>
+            <refName></refName>
+            <refAbout></refAbout>
+            <refContactInfo></refContactInfo>
+        </reference>
+    </references>
+    <recommendedJobs>
+        <job>
+            <title></title>
+            <company></company>
+            <description></description>
+        </job>
+        <job>
+            <title></title>
+            <company></company>
+            <description></description>
+        </job>
+        <job>
+            <title></title>
+            <company></company>
+            <description></description>
+        </job>
+    </recommendedJobs>
+
+</profile>
