@@ -1,5 +1,6 @@
 package pws.hw1.sax;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,14 +10,14 @@ import java.util.List;
  */
 public class Transcript {
     private String name, university, degree;
-    private int year;
+    private BigDecimal year;
     private List<Course> courses;
     
     public Transcript() {
         name = "";
         university = "";
         degree = "";
-        year = 0;
+        year = BigDecimal.ZERO;
         courses = new ArrayList<>();
     }
 
@@ -36,7 +37,7 @@ public class Transcript {
         return degree;
     }
 
-    public int getYear() {
+    public BigDecimal getYear() {
         return year;
     }
 
@@ -56,7 +57,7 @@ public class Transcript {
         this.degree = degree;
     }
 
-    public void setYear(int year) {
+    public void setYear(BigDecimal year) {
         this.year = year;
     }
 

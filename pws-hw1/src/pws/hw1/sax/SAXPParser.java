@@ -2,6 +2,7 @@ package pws.hw1.sax;
 
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -168,7 +169,8 @@ public class SAXPParser {
                     transcript.setDegree(content);
                     break;
                 case "year":
-                    transcript.setYear(Integer.parseInt(content));
+//                    transcript.setYear(Integer.parseInt(content));
+                    transcript.setYear(new BigDecimal(content));
                     break;
                 case "courseName":
                     course.setName(content);
@@ -180,7 +182,8 @@ public class SAXPParser {
                     course.setGrade(Integer.parseInt(content));
                     break;
                 case "credits":
-                    course.setCredits(Integer.parseInt(content));
+//                    course.setCredits(Integer.parseInt(content));
+                    course.setCredits(new BigDecimal(content));
                     break;
                 
                 case "courses":

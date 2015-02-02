@@ -5,19 +5,22 @@
  */
 package pws.hw1.sax;
 
+import java.math.BigDecimal;
+
 /**
  *
  * @author Andreas
  */
 public class Course {
     private String name, code;
-    private int grade, credits;
+    private int grade;
+    private BigDecimal credits;
     
     public Course() {
         name = "";
         code = "";
         grade = 0;
-        credits = 0;
+        credits = new BigDecimal(0);
     }
 
     public String getName() {
@@ -32,7 +35,7 @@ public class Course {
         return grade;
     }
 
-    public int getCredits() {
+    public BigDecimal getCredits() {
         return credits;
     }
 
@@ -48,7 +51,7 @@ public class Course {
         this.grade = grade;
     }
 
-    public void setCredits(int credits) {
+    public void setCredits(BigDecimal credits) {
         this.credits = credits;
     }
 }
