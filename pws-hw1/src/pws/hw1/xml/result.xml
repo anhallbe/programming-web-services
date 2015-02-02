@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><profile>
+<?xml version="1.0" encoding="UTF-8"?><profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="file:src/pws/hw1/xml/ApplicantProfile.xsd">
     <surname>Ronald</surname>
     <lastname>Weasley</lastname>
     <birthdate>3891-01-13+01:00</birthdate>
@@ -37,21 +37,21 @@
     <employments>
         <employment>
             <companyName>Cauldrons Inc.</companyName>
-            <companyDescription>Some description</companyDescription>
+            <companyDescription>A couldron manufacturing company based in Diagon Alley.</companyDescription>
             <start>3911-01-13+01:00</start>
             <end>3912-01-13+01:00</end>
             <monthlySalary>10000</monthlySalary>
         </employment>
         <employment>
             <companyName>Weasley Tricks and Candy Canes</companyName>
-            <companyDescription>Some description</companyDescription>
+            <companyDescription>A couldron manufacturing company based in Diagon Alley.</companyDescription>
             <start>3906-01-13+01:00</start>
             <end>3909-01-13+01:00</end>
             <monthlySalary>7000</monthlySalary>
         </employment>
         <employment>
             <companyName>Diagon Alley Custodials</companyName>
-            <companyDescription>Some description</companyDescription>
+            <companyDescription>A couldron manufacturing company based in Diagon Alley.</companyDescription>
             <start>3913-01-13+01:00</start>
             <end>3915-01-13+01:00</end>
             <monthlySalary>12000</monthlySalary>

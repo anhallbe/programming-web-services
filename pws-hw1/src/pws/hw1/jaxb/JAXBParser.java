@@ -20,6 +20,12 @@ import javax.xml.transform.stream.StreamSource;
  * @author andreas
  */
 public class JAXBParser {
+    
+    /**
+     * Parses the company info using a JAXB unmarshaller.
+     * @param xmlSource Location of the CompanyInfo XML
+     * @return 
+     */
     public static CompanyInfo parseCompany(String xmlSource) {
         try {
             JAXBContext jc = JAXBContext.newInstance("pws.hw1.jaxb");

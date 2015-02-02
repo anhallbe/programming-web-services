@@ -25,7 +25,12 @@ import org.xml.sax.SAXException;
 public class DOMParser {
 
   //  private CV cv = new CV();
-    
+    /**
+     * Uses the DOM XML processing method to parse the CV.
+     * @param xmlSource
+     * @param schema
+     * @return 
+     */
     public static CV parseCV(String xmlSource, String schema) {
         CV cv = new CV();
         
@@ -38,10 +43,7 @@ public class DOMParser {
         
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-//            Document document = builder.parse(new File("/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/ronald-cv.xml"));
             Document document = builder.parse(new File(xmlSource));
-            
-//            System.out.println("Root element :" + document.getDocumentElement().getNodeName());
             
             Node root = document.getFirstChild();
             NodeList children = root.getChildNodes();
@@ -60,11 +62,6 @@ public class DOMParser {
         
         return cv;
     }
-    
-//    public static void main(String[] args) {
-//        CV cv = DOMParser.parseCV();
-//        System.out.println("CV:\n" + cv);
-//    }
     
     private static void processNode(Node node, CV cv) {
         switch(node.getNodeName()) {

@@ -18,13 +18,17 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 public class SAXPParser {
     
+    /**
+     * Parses the the Employment Record using SAX.
+     * @param xmlPath
+     * @return 
+     */
     public static EmploymentRecord parseEmploymentRecord(String xmlPath) {
         SAXEmploymentRecordHandler handler = new SAXEmploymentRecordHandler();
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
             
-//            saxParser.parse(new File("/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/ronald-record.xml"), handler);
             saxParser.parse(new File(xmlPath), handler);
             
         } catch (ParserConfigurationException ex) {
@@ -38,13 +42,17 @@ public class SAXPParser {
         return handler.record;
     }
     
+    /**
+     * Processes the Transcript using SAX.
+     * @param xmlPath
+     * @return 
+     */
     public static Transcript parseTranscript(String xmlPath) {
         SAXTranscriptHandler handler = new SAXTranscriptHandler();
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
             
-//            saxParser.parse(new File("/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/ronald-record.xml"), handler);
             saxParser.parse(new File(xmlPath), handler);
             
         } catch (ParserConfigurationException ex) {
@@ -58,14 +66,9 @@ public class SAXPParser {
         return handler.transcript;
     }
     
-//    public static void main(String[] args) {
-//        EmploymentRecord record = SAXPParser.parseEmploymentRecord();
-//        System.out.println(record);
-//        System.out.println("______________________________________________________");
-//        for(Employment e : record.getEmployments())
-//            System.out.println(e.getCompany());
-//    }
-    
+    /**
+     * Handler for SAX events when processing the Employment Record.
+     */
     private static class SAXEmploymentRecordHandler extends DefaultHandler {
         public EmploymentRecord record = new EmploymentRecord();
         private Employment employment;
@@ -126,6 +129,9 @@ public class SAXPParser {
         }
     }
     
+    /**
+     * Handler for SAX events when processing the Transcript.
+     */
     private static class SAXTranscriptHandler extends DefaultHandler {
         public Transcript transcript = new Transcript();
         private Course course;

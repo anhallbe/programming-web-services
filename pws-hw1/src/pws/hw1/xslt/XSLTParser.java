@@ -18,7 +18,10 @@ import javax.xml.transform.stream.StreamSource;
 public class XSLTParser {
     
     /**
-     * Processes the Transcript XML given by transcriptPath to generate the "university" part of the applicant profile.
+     * Processes any XML (inputPath) using the xslt stylesheet (stylesheetPath)
+     * and generates a new xml at outputPath. This is really only used to 
+     * calculate the GPA from the applicant profile and insert it into
+     * the resulting XML.
      * @param stylesheetPath
      * @param inputPath
      * @param outputPath 
@@ -40,13 +43,4 @@ public class XSLTParser {
             Logger.getLogger(XSLTParser.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-//    
-//    public static void main(String[] args) {
-//        String stylesheet = "/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xslt/transcriptStylesheet.xml";
-//        String input = "/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xml/hogwarts-transcript.xml";
-//        String output = "/home/andreas/Development/programming-web-services/pws-hw1/src/pws/hw1/xslt/applicant-profile-test.xml";
-//        
-//        parseTranscript(stylesheet, input, output);
-//        System.out.println("Done!");
-//    }
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pws.hw1;
 
 import java.io.File;
@@ -44,6 +39,11 @@ public class Profiler {
     
     private final String PROFILE_PATH = "src/pws/hw1/xml/applicant-profile.xml";
     
+    /**
+     * When the profiler is run (i.e a new Profiler is created), it will gather 
+     * information from the CV, employment record, companyInfo and transcript XML-
+     * files and generate an applicant profile.
+     */
     public Profiler() {
         initObjects();
         initProfile();
@@ -53,6 +53,7 @@ public class Profiler {
             JAXBContext context = JAXBContext.newInstance(Profile.class);
             Marshaller marshaller = context.createMarshaller();
             
+            marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, "file:src/pws/hw1/xml/ApplicantProfile.xsd");
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             marshaller.marshal(profile, applicantProfileXML);
             marshaller.marshal(profile, System.out);
@@ -63,6 +64,10 @@ public class Profiler {
         processGPA();
     }
     
+    /**
+     * Parses the CV, Employment record, company info and transcript XML:s and transform
+     * them into java objects.
+     */
     private void initObjects() {
         String cvSchema = "src/pws/hw1/xml/CV.xsd";
         String cvXML = "src/pws/hw1/xml/ronald-cv.xml";
@@ -78,6 +83,9 @@ public class Profiler {
         transcript = SAXPParser.parseTranscript(transcriptXML);
     }
     
+    /**
+     * Calculates the applicants GPA and inserts it into the profile XML.
+     */
     private void processGPA() {
         String stylesheet = "src/pws/hw1/xslt/gpaStylesheet.xsl";
         String profileSource = PROFILE_PATH;
@@ -85,6 +93,10 @@ public class Profiler {
         XSLTParser.processGPA(stylesheet, profileSource, result);
     }
 
+    /**
+     * Creates a Profile object with almost all the relevant information needed.
+     * (no GPA though).
+     */
     private void initProfile() {
         //Process CV
         profile = new Profile();
@@ -133,7 +145,8 @@ public class Profiler {
         for(pws.hw1.sax.Employment e : employmentRecord.getEmployments()) {
             Employment pEmployment = new Employment();
             pEmployment.setCompanyName(e.getCompany());
-            pEmployment.setCompanyDescription("Some description");  //TODO: fix
+//            pEmployment.setCompanyDescription("Some description");  //TODO: fix
+            pEmployment.setCompanyDescription(company.getDescription());
             pEmployment.setStart(toGregorian(e.getStart()));
             pEmployment.setEnd(toGregorian(e.getEnd()));
             pEmployment.setMonthlySalary(e.getSalary());
@@ -153,6 +166,12 @@ public class Profiler {
         }
     }
     
+    /**
+     * Just a simple method for transforming a java.util.Date object into
+     * something that complies with the schema requirements for dates.
+     * @param date
+     * @return 
+     */
     private XMLGregorianCalendar toGregorian(Date date) {
         GregorianCalendar gCal = new GregorianCalendar();
         gCal.setTime(date);
@@ -165,6 +184,11 @@ public class Profiler {
         return xmlCal;
     }
     
+    /**
+     * Starts the profiler (XML processor) and generates the applicant profile.
+     * TODO: add arguments to specify XML paths
+     * @param args 
+     */
     public static void main(String[] args) {
         new Profiler();
     }
