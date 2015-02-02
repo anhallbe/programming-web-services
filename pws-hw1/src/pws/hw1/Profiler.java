@@ -37,7 +37,8 @@ public class Profiler {
     private Transcript transcript;
     private Profile profile;
     
-    private final String PROFILE_PATH = "src/pws/hw1/xml/applicant-profile.xml";
+    private final String PROFILE_PATH_NO_GPA = "src/pws/hw1/xml/applicant-profile-nogpa.xml";
+    private final String PROFILE_PATH = "src/pws/hw1/xml/applicant-profile-ronald.xml";
     
     /**
      * When the profiler is run (i.e a new Profiler is created), it will gather 
@@ -49,7 +50,7 @@ public class Profiler {
         initProfile();
         
         try {
-            File applicantProfileXML = new File(PROFILE_PATH);
+            File applicantProfileXML = new File(PROFILE_PATH_NO_GPA);
             JAXBContext context = JAXBContext.newInstance(Profile.class);
             Marshaller marshaller = context.createMarshaller();
             
@@ -88,8 +89,9 @@ public class Profiler {
      */
     private void processGPA() {
         String stylesheet = "src/pws/hw1/xslt/gpaStylesheet.xsl";
-        String profileSource = PROFILE_PATH;
-        String result = "src/pws/hw1/xml/result.xml";
+        String profileSource = PROFILE_PATH_NO_GPA;
+//        String result = "src/pws/hw1/xml/result.xml";
+        String result = PROFILE_PATH;
         XSLTParser.processGPA(stylesheet, profileSource, result);
     }
 
