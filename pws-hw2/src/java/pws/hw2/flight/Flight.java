@@ -6,6 +6,7 @@ public class Flight {
     private String to;
     private int seats;
     private int price;
+    private int flightID;
 
     public static final int MAX_SEATS = 100;
     public static final int MAX_PRICE = 1000;
@@ -15,6 +16,7 @@ public class Flight {
         this.to = to;
         seats = MAX_SEATS;
         price = (int) (MAX_PRICE * Math.random());
+        flightID = (int) (Integer.MAX_VALUE * Math.random());
     }
     
     /**
@@ -59,5 +61,13 @@ public class Flight {
 
     public int getPrice() {
         return price;
+    }
+    
+    public int getID() {
+        return flightID;
+    }
+    
+    public void setID(int flightID) {
+        this.flightID = flightID;
     }
 }
