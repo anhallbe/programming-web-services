@@ -27,50 +27,52 @@ public class FlightFinder {
     
     public FlightFinder() {
         allFlights = new ArrayList<>();
-        allFlights.add(new Flight("Stockholm", "Madrid"));
-        allFlights.add(new Flight("Madrid", "London"));
-        allFlights.add(new Flight("Stockholm", "London"));
-        allFlights.add(new Flight("London", "Stockholm"));
-        allFlights.add(new Flight("Stockholm", "Paris"));
-        allFlights.add(new Flight("Madrid", "Paris"));
-        allFlights.add(new Flight("London", "Paris"));
-        allFlights.add(new Flight("Paris", "London"));
-        allFlights.add(new Flight("Paris", "Stockholm"));
-//        allFlights.add(new Flight("Oslo", "Stockholm"));
-//        allFlights.add(new Flight("Stockholm", "Oslo"));
-//        allFlights.add(new Flight("Oslo", "Stockholm"));
-//        allFlights.add(new Flight("Stockholm", "Munich"));
-//        allFlights.add(new Flight("Munich", "Stockholm"));
-//        allFlights.add(new Flight("Oslo", "Paris"));
-//        allFlights.add(new Flight("Paris", "Oslo"));
-//        allFlights.add(new Flight("Stockholm", "Berlin"));
-//        allFlights.add(new Flight("Berlin", "Stockholm"));
-//        allFlights.add(new Flight("Berlin", "London"));
-//        allFlights.add(new Flight("London", "Berlin"));
-//        allFlights.add(new Flight("Berlin", "Paris"));
-//        allFlights.add(new Flight("Paris", "Berlin"));
-//        allFlights.add(new Flight("London", "New York"));
-//        allFlights.add(new Flight("New York", "London"));
-//        allFlights.add(new Flight("Miami", "Munich"));
-//        allFlights.add(new Flight("Munich", "Miami"));
-//        allFlights.add(new Flight("Miami", "Austin"));
-//        allFlights.add(new Flight("Austin", "Miami"));
-//        allFlights.add(new Flight("Austin", "Las Vegas"));
-//        allFlights.add(new Flight("Las Vegas", "Austin"));
-//        allFlights.add(new Flight("Las Vegas", "San Fransisco"));
-//        allFlights.add(new Flight("San Fransisco", "Las Vegas"));
-//        allFlights.add(new Flight("San Fransisco", "Denver"));
-//        allFlights.add(new Flight("Denver", "San Fransisco"));
-//        allFlights.add(new Flight("Denver", "Los Angeles"));
-//        allFlights.add(new Flight("Los Angeles", "Denver"));
-//        allFlights.add(new Flight("Los Angeles", "New York"));
-//        allFlights.add(new Flight("New York", "Los Angeles"));
-//        allFlights.add(new Flight("New York", "Madrid"));
-//        allFlights.add(new Flight("Madrid", "New York"));
-//        allFlights.add(new Flight("Los Angeles", "Tokyo"));
-//        allFlights.add(new Flight("Tokyo", "Los Angeles"));
-//        allFlights.add(new Flight("Tokyo", "Stockholm"));
-//        allFlights.add(new Flight("Stockholm", "Tokyo"));
+//        allFlights.add(new Flight("Stockholm", "Madrid"));
+//        allFlights.add(new Flight("Madrid", "London"));
+//        allFlights.add(new Flight("Stockholm", "London"));
+//        allFlights.add(new Flight("London", "Stockholm"));
+//        allFlights.add(new Flight("Stockholm", "Paris"));
+//        allFlights.add(new Flight("Madrid", "Paris"));
+//        allFlights.add(new Flight("London", "Paris"));
+//        allFlights.add(new Flight("Paris", "London"));
+//        allFlights.add(new Flight("Paris", "Stockholm"));
+        
+        
+        allFlights.add(new Flight("Oslo", "Stockholm"));
+        allFlights.add(new Flight("Stockholm", "Oslo"));
+        allFlights.add(new Flight("Oslo", "Stockholm"));
+        allFlights.add(new Flight("Stockholm", "Munich"));
+        allFlights.add(new Flight("Munich", "Stockholm"));
+        allFlights.add(new Flight("Oslo", "Paris"));
+        allFlights.add(new Flight("Paris", "Oslo"));
+        allFlights.add(new Flight("Stockholm", "Berlin"));
+        allFlights.add(new Flight("Berlin", "Stockholm"));
+        allFlights.add(new Flight("Berlin", "London"));
+        allFlights.add(new Flight("London", "Berlin"));
+        allFlights.add(new Flight("Berlin", "Paris"));
+        allFlights.add(new Flight("Paris", "Berlin"));
+        allFlights.add(new Flight("London", "New York"));
+        allFlights.add(new Flight("New York", "London"));
+        allFlights.add(new Flight("Miami", "Munich"));
+        allFlights.add(new Flight("Munich", "Miami"));
+        allFlights.add(new Flight("Miami", "Austin"));
+        allFlights.add(new Flight("Austin", "Miami"));
+        allFlights.add(new Flight("Austin", "Las Vegas"));
+        allFlights.add(new Flight("Las Vegas", "Austin"));
+        allFlights.add(new Flight("Las Vegas", "San Fransisco"));
+        allFlights.add(new Flight("San Fransisco", "Las Vegas"));
+        allFlights.add(new Flight("San Fransisco", "Denver"));
+        allFlights.add(new Flight("Denver", "San Fransisco"));
+        allFlights.add(new Flight("Denver", "Los Angeles"));
+        allFlights.add(new Flight("Los Angeles", "Denver"));
+        allFlights.add(new Flight("Los Angeles", "New York"));
+        allFlights.add(new Flight("New York", "Los Angeles"));
+        allFlights.add(new Flight("New York", "Madrid"));
+        allFlights.add(new Flight("Madrid", "New York"));
+        allFlights.add(new Flight("Los Angeles", "Tokyo"));
+        allFlights.add(new Flight("Tokyo", "Los Angeles"));
+        allFlights.add(new Flight("Tokyo", "Stockholm"));
+        allFlights.add(new Flight("Stockholm", "Tokyo"));
     }
 
     /**
@@ -81,8 +83,8 @@ public class FlightFinder {
     public List<Itinerary> possibleItineraries(@WebParam(name = "departure") String departure, @WebParam(name = "destination") String destination) {
         List<Flight> fl = new ArrayList<>();
         fl.addAll(findPaths(departure, destination));
-//        fl.addAll(findPaths(departure, destination, new ArrayList<>(), new ArrayList<>()));
         List<Itinerary> result = structurePaths(fl, departure, destination);
+        
         return result;
     }
     
@@ -100,7 +102,8 @@ public class FlightFinder {
                 List<Flight> newVisited = new ArrayList<>(flightsTaken);
                 newVisited.add(f);
                 List<String> newVisitedCities = new ArrayList<>(visitedCities);
-                newVisitedCities.add(f.getTo());
+//                newVisitedCities.add(f.getTo());
+                newVisitedCities.add(f.getFrom());
                 List<Flight> tail = findPaths(f.getTo(), dest, newVisited, newVisitedCities);
                 path.addAll(tail);
             }
@@ -113,15 +116,27 @@ public class FlightFinder {
         Itinerary temp = new Itinerary();
         
         for(Flight f : flights) {
-            if(f.getFrom().equals(from)) {
+            if(f.getFrom().equals(from))
                 temp = new Itinerary();
-                temp.addFlight(f);
-            } else if(f.getTo().equals(to)) {
-                temp.addFlight(f);
+            temp.addFlight(f);
+            if(f.getTo().equals(to))
                 itineraries.add(temp);
-            } else
-                temp.addFlight(f);
         }
         return itineraries;
     }
 }
+
+
+
+
+//        for(Flight f : flights) {
+//            if(f.getFrom().equals(from)) {
+//                temp = new Itinerary();
+//                temp.addFlight(f);
+//            } else if(f.getTo().equals(to)) {
+//                temp.addFlight(f);
+//                itineraries.add(temp);
+//            } else
+//                temp.addFlight(f);
+//        }
+        

@@ -17,3 +17,10 @@ hs_err_pid*
 /pws-hw1/build/
 
 /pws-hw1/nbproject/*
+/order-processing/nbproject/private/
+/order-processing/build/
+/order-processing-old/nbproject/private/
+/OrderProcessWS/nbproject/private/
+/OrderProcessWS/build/
+/pws-hw2/nbproject/private/
+/pws-hw2/build/
