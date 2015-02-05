@@ -1,5 +1,6 @@
 package pws.hw2.flight;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Itinerary {
@@ -8,6 +9,10 @@ public class Itinerary {
     public Itinerary(List<Flight> flights) {
         this.flights = flights;
     }
+    
+    public Itinerary() {
+        flights = new ArrayList<>();
+    }
 
     public List<Flight> getFlights() {
         return flights;
@@ -15,6 +20,10 @@ public class Itinerary {
 
     public void setFlights(List<Flight> flights) {
         this.flights = flights;
+    }
+    
+    public void addFlight(Flight flight) {
+        this.flights.add(flight);
     }
     
     /**
