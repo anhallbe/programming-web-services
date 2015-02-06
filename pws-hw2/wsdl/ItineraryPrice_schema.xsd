@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema version="1.0" targetNamespace="http://price.hw2.pws/" xmlns:tns="http://price.hw2.pws/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <xs:element name="itineraryPrices" nillable="true" type="tns:possibleItineraries"/>
+  <xs:element name="itineraryPrices" nillable="true" type="tns:itineraryPrices"/>
 
-  <xs:element name="itineraryPricesResponse" nillable="true" type="tns:possibleItinerariesResponse"/>
+  <xs:element name="itineraryPricesResponse" nillable="true" type="tns:itineraryPricesResponse"/>
 
   <xs:complexType name="itineraryPrices">
     <xs:sequence>
