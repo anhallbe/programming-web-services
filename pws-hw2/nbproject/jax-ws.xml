@@ -10,6 +10,9 @@
     <service name="TicketAppraiser">
       <implementation-class>pws.hw2.ticket.TicketAppraiser</implementation-class>
     </service>
+    <service name="ItineraryPrice">
+      <implementation-class>pws.hw2.price.ItineraryPrice</implementation-class>
+    </service>
   </services>
   <clients>
     <client name="FlightFinder">
@@ -49,4 +52,5 @@
       </wsimport-options>
     </client>
   </clients>
+  <jsr109>true</jsr109>
 </jax-ws>

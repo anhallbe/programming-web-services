@@ -81,6 +81,7 @@ public class FlightFinder {
      */
     @WebMethod(operationName = "possibleItineraries")
     public List<Itinerary> possibleItineraries(@WebParam(name = "departure") String departure, @WebParam(name = "destination") String destination) {
+        System.out.println("possibleItineraries(" + departure + ", " + destination + ") called.");
         List<Flight> fl = new ArrayList<>();
         fl.addAll(findPaths(departure, destination));
         List<Itinerary> result = structurePaths(fl, departure, destination);
