@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://ticket.hw2.pws/" xmlns:tns="http://ticket.hw2.pws/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="availableSeats" nillable="true" type="tns:availableSeats"/>
+
+  <xs:element name="availableSeatsResponse" nillable="true" type="tns:availableSeatsResponse"/>
+
+  <xs:element name="ticketPrice" type="tns:ticketPrice"/>
+
+  <xs:element name="ticketPriceResponse" type="tns:ticketPriceResponse"/>
+
+  <xs:complexType name="ticketPrice">
+    <xs:sequence>
+      <xs:element name="itinerary" type="tns:itinerary" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="itinerary">
+    <xs:sequence>
+      <xs:element name="flights" type="tns:flight" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="flight">
+    <xs:sequence>
+      <xs:element name="from" type="xs:string" minOccurs="0"/>
+      <xs:element name="ID" type="xs:int"/>
+      <xs:element name="price" type="xs:int"/>
+      <xs:element name="seats" type="xs:int"/>
+      <xs:element name="to" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ticketPriceResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="availableSeats">
+    <xs:sequence>
+      <xs:element name="itinerary" type="tns:itinerary" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="availableSeatsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

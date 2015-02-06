@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="pws.hw2/auth" xmlns:tns="pws.hw2/auth" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="authenticate" nillable="true" type="tns:authenticate"/>
+
+  <xs:element name="authenticateResponse" nillable="true" type="tns:authenticateResponse"/>
+
+  <xs:complexType name="authenticate">
+    <xs:sequence>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+      <xs:element name="userID" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="authenticateResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

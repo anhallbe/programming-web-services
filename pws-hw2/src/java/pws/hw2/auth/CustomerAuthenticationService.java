@@ -28,6 +28,11 @@ public class CustomerAuthenticationService {
      */
     @WebMethod(operationName = "authenticate")
     public boolean authenticate(@WebParam(name = "userID") String userID, @WebParam(name = "password") String password) {
-        return registeredUsers.getOrDefault(userID, "").equals(password);
+//        return registeredUsers.getOrDefault(userID, "").equals(password);
+        String storedPassword = registeredUsers.get(userID);
+        if(storedPassword == null)
+            return false;
+        else
+            return storedPassword.equals(password);
     }
 }
