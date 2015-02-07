@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Description for the ItineraryPrice service  -->
+<definitions targetNamespace="http://price.hw2.pws/" name="ItineraryPrice" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:tns="http://price.hw2.pws/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://price.hw2.pws/" schemaLocation="ItineraryPrice_schema.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="itineraryPrices">
+    <part name="parameters" element="tns:itineraryPrices"/>
+  </message>
+  <message name="itineraryPricesResponse">
+    <part name="parameters" element="tns:itineraryPricesResponse"/>
+  </message>
+  <portType name="ItineraryPrice">
+    <operation name="itineraryPrices">
+      <input wsam:Action="http://flightfinder.hw2.pws/ItineraryPrice/itineraryPricesRequest" message="tns:itineraryPrices"/>
+      <output wsam:Action="http://flightfinder.hw2.pws/ItineraryPrice/itineraryPricesResponse" message="tns:itineraryPricesResponse"/>
+    </operation>
+  </portType>
+  <binding name="ItineraryPricePortBinding" type="tns:ItineraryPrice">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="itineraryPrices">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ItineraryPrice">
+    <port name="ItineraryPricePort" binding="tns:ItineraryPricePortBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>
+
