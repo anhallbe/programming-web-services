@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/pws-hw2/FlightFinder?wsdl" uri="wsdl/localhost_8080/pws-hw2/FlightFinder.wsdl"/>
+    <system systemId="http://localhost:8080/pws-hw2/FlightFinder?xsd=1" uri="wsdl/localhost_8080/pws-hw2/FlightFinder.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/pws-hw2/CustomerAuthenticationService?wsdl" uri="wsdl/localhost_8080/pws-hw2/CustomerAuthenticationService.wsdl"/>
+    <system systemId="http://localhost:8080/pws-hw2/CustomerAuthenticationService?xsd=1" uri="wsdl/localhost_8080/pws-hw2/CustomerAuthenticationService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/pws-hw2/TicketAppraiser?wsdl" uri="wsdl/localhost_8080/pws-hw2/TicketAppraiser.wsdl"/>
+    <system systemId="http://localhost:8080/pws-hw2/TicketAppraiser?xsd=1" uri="wsdl/localhost_8080/pws-hw2/TicketAppraiser.xsd_1.xsd"/>
+</catalog>
