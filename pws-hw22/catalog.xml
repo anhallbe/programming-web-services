@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/pws-hw22/FlightFinder?wsdl" uri="src/conf/xml-resources/web-service-references/FlightFinder/wsdl/localhost_8080/pws-hw22/FlightFinder.wsdl"/>
+    <system systemId="http://localhost:8080/pws-hw22/FlightFinder?xsd=1" uri="src/conf/xml-resources/web-service-references/FlightFinder/wsdl/localhost_8080/pws-hw22/FlightFinder.xsd_1.xsd"/>
+    <system systemId="file:/home/andreas/Development/programming-web-services/pws-hw22/wsdl/PriceOutput.wsdl" uri="src/conf/xml-resources/web-services/PriceOutput/wsdl/PriceOutput.wsdl"/>
+    <system systemId="file:/home/andreas/Development/programming-web-services/pws-hw22/wsdl/PriceOutput_schema.xsd" uri="src/conf/xml-resources/web-services/PriceOutput/wsdl/PriceOutput_schema.xsd"/>
+    <system systemId="file:/home/andreas/Development/programming-web-services/pws-hw22/wsdl/TicketBooking.wsdl" uri="src/conf/xml-resources/web-services/TicketBooking/wsdl/TicketBooking.wsdl"/>
+    <system systemId="file:/home/andreas/Development/programming-web-services/pws-hw22/wsdl/TicketBooking_schema.xsd" uri="src/conf/xml-resources/web-services/TicketBooking/wsdl/TicketBooking_schema.xsd"/>
+</catalog>

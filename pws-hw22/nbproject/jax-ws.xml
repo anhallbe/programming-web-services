@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="CustomerAuthenticationService">
+      <implementation-class>pws.hw2.CustomerAuthenticationService</implementation-class>
+    </service>
+    <service name="FlightFinder">
+      <implementation-class>pws.hw2.FlightFinder</implementation-class>
+    </service>
+    <service name="TicketAppraiser">
+      <implementation-class>pws.hw2.TicketAppraiser</implementation-class>
+    </service>
+    <service name="PriceOutput">
+      <implementation-class>pws.hw2.PriceOutput</implementation-class>
+    </service>
+    <service name="TicketBooking">
+      <implementation-class>pws.hw2.TicketBooking</implementation-class>
+    </service>
+  </services>
+  <clients>
+  </clients>
+  <jsr109>true</jsr109>
+</jax-ws>
