@@ -18,6 +18,10 @@ public class Flight {
         price = (int) (MAX_PRICE * Math.random());
         flightID = (int) (Integer.MAX_VALUE * Math.random());
     }
+
+    public Flight() {
+        
+    }
     
     /**
      * Try to book this flight. Returns true if there were available seats, otherwise false.

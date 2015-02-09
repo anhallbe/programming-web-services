@@ -6,4 +6,6 @@
     <system systemId="file:/home/andreas/Development/programming-web-services/pws-hw22/wsdl/PriceOutput_schema.xsd" uri="src/conf/xml-resources/web-services/PriceOutput/wsdl/PriceOutput_schema.xsd"/>
     <system systemId="file:/home/andreas/Development/programming-web-services/pws-hw22/wsdl/TicketBooking.wsdl" uri="src/conf/xml-resources/web-services/TicketBooking/wsdl/TicketBooking.wsdl"/>
     <system systemId="file:/home/andreas/Development/programming-web-services/pws-hw22/wsdl/TicketBooking_schema.xsd" uri="src/conf/xml-resources/web-services/TicketBooking/wsdl/TicketBooking_schema.xsd"/>
+    <system systemId="file:/home/andreas/Development/programming-web-services/pws-hw22/wsdl/TicketIssue.wsdl" uri="src/conf/xml-resources/web-services/TicketIssue/wsdl/TicketIssue.wsdl"/>
+    <system systemId="file:/home/andreas/Development/programming-web-services/pws-hw22/wsdl/TicketIssue_schema.xsd" uri="src/conf/xml-resources/web-services/TicketIssue/wsdl/TicketIssue_schema.xsd"/>
 </catalog>

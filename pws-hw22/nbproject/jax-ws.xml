@@ -16,6 +16,9 @@
     <service name="TicketBooking">
       <implementation-class>pws.hw2.TicketBooking</implementation-class>
     </service>
+    <service name="TicketIssue">
+      <implementation-class>pws.hw2.TicketIssue</implementation-class>
+    </service>
   </services>
   <clients>
   </clients>
