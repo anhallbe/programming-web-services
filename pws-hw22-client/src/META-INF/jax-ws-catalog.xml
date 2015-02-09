@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/pws-hw22/FlightFinder?wsdl" uri="wsdl/localhost_8080/pws-hw22/FlightFinder.wsdl"/>
+    <system systemId="http://localhost:8080/pws-hw22/FlightFinder?xsd=1" uri="wsdl/localhost_8080/pws-hw22/FlightFinder.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/pws-hw22/CustomerAuthenticationService?wsdl" uri="wsdl/localhost_8080/pws-hw22/CustomerAuthenticationService.wsdl"/>
+    <system systemId="http://localhost:8080/pws-hw22/CustomerAuthenticationService?xsd=1" uri="wsdl/localhost_8080/pws-hw22/CustomerAuthenticationService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/pws-hw22/TicketAppraiser?wsdl" uri="wsdl/localhost_8080/pws-hw22/TicketAppraiser.wsdl"/>
+    <system systemId="http://localhost:8080/pws-hw22/TicketAppraiser?xsd=1" uri="wsdl/localhost_8080/pws-hw22/TicketAppraiser.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/pws-hw22/PriceOutput?wsdl" uri="wsdl/localhost_8080/pws-hw22/PriceOutput.wsdl"/>
+    <system systemId="http://localhost:8080/pws-hw22/PriceOutput?xsd=1" uri="wsdl/localhost_8080/pws-hw22/PriceOutput.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/pws-hw22/TicketBooking?wsdl" uri="wsdl/localhost_8080/pws-hw22/TicketBooking.wsdl"/>
+    <system systemId="http://localhost:8080/pws-hw22/TicketBooking?xsd=1" uri="wsdl/localhost_8080/pws-hw22/TicketBooking.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/pws-hw22/TicketIssue?wsdl" uri="wsdl/localhost_8080/pws-hw22/TicketIssue.wsdl"/>
+    <system systemId="http://localhost:8080/pws-hw22/TicketIssue?xsd=1" uri="wsdl/localhost_8080/pws-hw22/TicketIssue.xsd_1.xsd"/>
+</catalog>

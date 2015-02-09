@@ -13,7 +13,7 @@ import javax.jws.WebService;
  *
  * @author andreas
  */
-@WebService(serviceName = "PriceOutput", portName = "PriceOutputPort", endpointInterface = "pws.hw2.PriceOutput", targetNamespace = "http://hw2.pws/", wsdlLocation = "WEB-INF/wsdl/PriceOutput/PriceOutput.wsdl")
+@WebService(serviceName = "PriceOutput", portName = "PriceOutputPort"/*, endpointInterface = "pws.hw2.PriceOutput", targetNamespace = "http://hw2.pws/", wsdlLocation = "WEB-INF/wsdl/PriceOutput/PriceOutput.wsdl"*/)
 public class PriceOutput {
 
     public java.util.List<java.lang.Integer> priceOutput(java.util.List<pws.hw2.Itinerary> availableItinerary) {
