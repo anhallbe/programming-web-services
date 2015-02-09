@@ -76,9 +76,7 @@ public class FlightServiceTestClient {
         System.out.println("Task 6:");
         System.out.println("booked tickets:");
         for(Boolean i : successfulIssues)
-            System.out.println(i); 	
-
-	System.out.println("Done!");
+            System.out.println(i); 
     }
 
     private static java.util.List<pws.hw2.Itinerary> possibleItineraries(java.lang.String departure, java.lang.String destination) {
@@ -106,20 +104,20 @@ public class FlightServiceTestClient {
     }
 
     private static java.util.List<java.lang.Integer> priceOutput(java.util.List<pws.hw2.Itinerary> arg0) {
-        pws.hw2.PriceOutputImplService service = new pws.hw2.PriceOutputImplService();
-        pws.hw2.PriceOutputImpl port = service.getPriceOutputImplPort();
+        pws.hw2.PriceOutput_Service service = new pws.hw2.PriceOutput_Service();
+        pws.hw2.PriceOutput port = service.getPriceOutputPort();
         return port.priceOutput(arg0);
     }
 
     private static java.util.List<pws.hw2.Ticket> ticketBooking(java.lang.String arg0, pws.hw2.Itinerary arg1) {
-        pws.hw2.TicketBookingImplService service = new pws.hw2.TicketBookingImplService();
-        pws.hw2.TicketBookingImpl port = service.getTicketBookingImplPort();
+        pws.hw2.TicketBooking_Service service = new pws.hw2.TicketBooking_Service();
+        pws.hw2.TicketBooking port = service.getTicketBookingPort();
         return port.ticketBooking(arg0, arg1);
     }
 
     private static boolean ticketIssue(pws.hw2.Ticket arg0) {
-        pws.hw2.TicketIssueImplService service = new pws.hw2.TicketIssueImplService();
-        pws.hw2.TicketIssueImpl port = service.getTicketIssueImplPort();
+        pws.hw2.TicketIssue_Service service = new pws.hw2.TicketIssue_Service();
+        pws.hw2.TicketIssue port = service.getTicketIssuePort();
         return port.ticketIssue(arg0);
     }
    

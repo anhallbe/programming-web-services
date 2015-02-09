@@ -135,9 +135,9 @@ public class FlightFinder {
 		Flight f = new Flight();
 		f.setFrom(from);
 		f.setTo(to);
-		f.setPrice(rand.nextInt(100));
-		f.setID(rand.nextInt(100));
-		f.setSeats(rand.nextInt(100));
+		f.setPrice(1);
+		f.setID(1);
+		f.setSeats(10);
 		allFlights.add(f);
 	}
     

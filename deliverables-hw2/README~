@@ -1,0 +1,18 @@
+ID2208 Homework 2
+Andreas Hallberg
+anhallbe@kth.se
+____________________________________
+Flight booking service
+	Tasks 1 - 3 were implemented with a bottom-up approach, i.e from Java to WSDL.
+	Tasks 3 - 6 were implemented top-down, WSDL to Java.
+The server will listen to port 8082, so make sure it's not in use.
+____________________________________
+To run the services (server side):
+	cd service
+	java -cp . pws.hw2.DeployServices
+
+To run the client:
+	cd client
+	java -cp . pws.hw2.FlightServiceTestClient
+
+

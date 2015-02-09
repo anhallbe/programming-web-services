@@ -23,6 +23,10 @@ public class TicketAppraiser {
     
     @WebMethod(operationName = "ticketPrice")
     public int ticketPrice(@WebParam(name = "itinerary") Itinerary itinerary) {
-        return itinerary.getPrice();
+	int total = 0;
+	for(Flight f : itinerary.getFlights())
+		total += f.getPrice();
+        //return itinerary.getPrice();
+	return total;
     }
 }

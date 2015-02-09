@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import pws.hw2.Flight;
 import pws.hw2.Itinerary;
-//import pws.hw2.Ticket;
+import pws.hw2.Ticket;
 
 public class FlightServiceTestClient {
     
@@ -56,7 +56,7 @@ public class FlightServiceTestClient {
             System.out.println(p);
         
         //TASK 4
-   /*     List<Integer> availablePrices = priceOutput(possibleItineraries);
+        List<Integer> availablePrices = priceOutput(possibleItineraries);
         System.out.println("Task 4:");
         System.out.println("available prices:");
         for(Integer p : availablePrices)
@@ -76,7 +76,9 @@ public class FlightServiceTestClient {
         System.out.println("Task 6:");
         System.out.println("booked tickets:");
         for(Boolean i : successfulIssues)
-            System.out.println(i); */
+            System.out.println(i); 	
+
+	System.out.println("Done!")
     }
 
     private static java.util.List<pws.hw2.Itinerary> possibleItineraries(java.lang.String departure, java.lang.String destination) {
@@ -102,23 +104,23 @@ public class FlightServiceTestClient {
         pws.hw2.TicketAppraiser port = service.getTicketAppraiserPort();
         return port.ticketPrice(itinerary);
     }
-/*
+
     private static java.util.List<java.lang.Integer> priceOutput(java.util.List<pws.hw2.Itinerary> arg0) {
-        pws.hw2.PriceOutput_Service service = new pws.hw2.PriceOutput_Service();
-        pws.hw2.PriceOutput port = service.getPriceOutputPort();
+        pws.hw2.PriceOutputImplService service = new pws.hw2.PriceOutputImplService();
+        pws.hw2.PriceOutputImpl port = service.getPriceOutputImplPort();
         return port.priceOutput(arg0);
     }
 
     private static java.util.List<pws.hw2.Ticket> ticketBooking(java.lang.String arg0, pws.hw2.Itinerary arg1) {
-        pws.hw2.TicketBooking_Service service = new pws.hw2.TicketBooking_Service();
-        pws.hw2.TicketBooking port = service.getTicketBookingPort();
+        pws.hw2.TicketBookingImplService service = new pws.hw2.TicketBookingImplService();
+        pws.hw2.TicketBookingImpl port = service.getTicketBookingImplPort();
         return port.ticketBooking(arg0, arg1);
     }
 
     private static boolean ticketIssue(pws.hw2.Ticket arg0) {
-        pws.hw2.TicketIssue_Service service = new pws.hw2.TicketIssue_Service();
-        pws.hw2.TicketIssue port = service.getTicketIssuePort();
+        pws.hw2.TicketIssueImplService service = new pws.hw2.TicketIssueImplService();
+        pws.hw2.TicketIssueImpl port = service.getTicketIssueImplPort();
         return port.ticketIssue(arg0);
     }
- */   
+   
 }
