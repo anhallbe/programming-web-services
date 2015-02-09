@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://hw2.pws/" xmlns:tns="http://hw2.pws/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="ticketIssue" type="tns:ticketIssue"/>
+
+  <xs:element name="ticketIssueResponse" type="tns:ticketIssueResponse"/>
+
+  <xs:complexType name="ticketIssue">
+    <xs:sequence>
+        <xs:element name="ticket" type="tns:ticket"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ticketIssueResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="ticket">
+    <xs:sequence>
+        <xs:element name="booked" type="xs:boolean" />
+        <xs:element name="flight" type="tns:flight" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="flight">
+    <xs:sequence>
+      <xs:element name="from" type="xs:string" minOccurs="0"/>
+      <xs:element name="ID" type="xs:int"/>
+      <xs:element name="price" type="xs:int"/>
+      <xs:element name="seats" type="xs:int"/>
+      <xs:element name="to" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
