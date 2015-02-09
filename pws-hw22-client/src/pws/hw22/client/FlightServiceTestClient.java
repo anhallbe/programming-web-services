@@ -1,9 +1,70 @@
 package pws.hw22.client;
 
+import java.util.ArrayList;
+import java.util.List;
+import pws.hw2.Flight;
+import pws.hw2.Itinerary;
+import pws.hw2.Ticket;
+
 public class FlightServiceTestClient {
+    
+    private static final String departure = "Stockholm";
+    private static final String destination = "Madrid";
+    private static final String userID = "user1";
+    private static final String password = "password1";
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        //TASK 1
+        boolean authenticated = authenticate(userID, password);
+        System.out.println("Task 1:");
+        System.out.println("authenticated: " + authenticated);
+        
+        //TASK 2
+        List<Itinerary> possibleItineraries = possibleItineraries(departure, destination);
+        System.out.println("Task 2:");
+        System.out.println("itineraries:");
+        for(Itinerary i : possibleItineraries) {
+            System.out.println("________");
+            for(Flight f : i.getFlights())
+                System.out.println("\t" + f.getFrom() + "-->" + f.getTo());
+        }
+        
+        //TASK 3
+        List<Integer> allSeats = new ArrayList<>();
+        List<Integer> allPrices = new ArrayList<>();
+        for(Itinerary i : possibleItineraries) {
+            allSeats.add(availableSeats(i));
+            allPrices.add(ticketPrice(i));
+        }
+        System.out.println("Task 3:");
+        System.out.println("prices:");
+        for(Integer s : allSeats)
+            System.out.println(s);
+        System.out.println("available seats");
+        for(Integer p : allPrices)
+            System.out.println(p);
+        
+        //TASK 4
+        List<Integer> availablePrices = priceOutput(possibleItineraries);
+        System.out.println("Task 4:");
+        for(Integer p : availablePrices)
+            System.out.println(p);
+        
+        //TASK 5
+        List<Ticket> tickets = ticketBooking("MY CREDIT CARD NUMBER IS NOT A NUMBER LOL", possibleItineraries.get(0));
+        System.out.println("Task 5:");
+        System.out.println("tickets:");
+        for(Ticket t : tickets)
+            System.out.println("Flight " + t.getFlight().getID() + ", booked: " + t.isBooked());
+            
+        //TASK 6
+        List<Boolean> successfulIssues = new ArrayList<>();
+        for(Ticket t : tickets)
+            successfulIssues.add(ticketIssue(t));
+        System.out.println("Task 6:");
+        System.out.println("booked tickets:");
+        for(Boolean i : successfulIssues)
+            System.out.println(i);
     }
 
     private static java.util.List<pws.hw2.Itinerary> possibleItineraries(java.lang.String departure, java.lang.String destination) {
