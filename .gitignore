@@ -1,11 +1,8 @@
-*.class
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
 # Package Files #
-*.jar
-*.war
 *.ear
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
@@ -24,3 +21,11 @@ hs_err_pid*
 /OrderProcessWS/build/
 /pws-hw2/nbproject/private/
 /pws-hw2/build/
+/pws-hw2-client/nbproject/private/
+/pws-hw2-client/build/
+/pws-hw22/nbproject/private/
+/pws-hw22/pws-hw22-war/nbproject/private/
+/pws-hw22/pws-hw22-ejb/nbproject/private/
+/pws-hw22/build/
+/pws-hw22-client/nbproject/private/
+/pws-hw22-client/build/
