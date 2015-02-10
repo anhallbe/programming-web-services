@@ -21,6 +21,16 @@ public class FlightServiceTestClient {
         
         //TASK 2
         List<Itinerary> possibleItineraries = possibleItineraries(departure, destination);
+//        List<Itinerary> possibleItineraries = new ArrayList<>();
+//        Itinerary it = new Itinerary();
+//        Flight fl = new Flight();
+//        fl.setFrom("A");
+//        fl.setTo("B");
+//        fl.setID(123);
+//        fl.setPrice(100);
+//        fl.setSeats(100);
+//        it.getFlights().add(fl);
+//        possibleItineraries.add(it);
         System.out.println("Task 2:");
         System.out.println("itineraries:");
         for(Itinerary i : possibleItineraries) {
@@ -28,6 +38,7 @@ public class FlightServiceTestClient {
             for(Flight f : i.getFlights())
                 System.out.println("\t" + f.getFrom() + "-->" + f.getTo());
         }
+//        
         
         //TASK 3
         List<Integer> allSeats = new ArrayList<>();
@@ -47,6 +58,7 @@ public class FlightServiceTestClient {
         //TASK 4
         List<Integer> availablePrices = priceOutput(possibleItineraries);
         System.out.println("Task 4:");
+        System.out.println("available prices:");
         for(Integer p : availablePrices)
             System.out.println(p);
         

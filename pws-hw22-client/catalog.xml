@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost:8080/pws-hw22/FlightFinder?wsdl" uri="xml-resources/web-service-references/FlightFinder/wsdl/localhost_8080/pws-hw22/FlightFinder.wsdl"/>
-    <system systemId="http://localhost:8080/pws-hw22/FlightFinder?xsd=1" uri="xml-resources/web-service-references/FlightFinder/wsdl/localhost_8080/pws-hw22/FlightFinder.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/pws-hw22/CustomerAuthenticationService?wsdl" uri="xml-resources/web-service-references/CustomerAuthenticationService/wsdl/localhost_8080/pws-hw22/CustomerAuthenticationService.wsdl"/>
     <system systemId="http://localhost:8080/pws-hw22/CustomerAuthenticationService?xsd=1" uri="xml-resources/web-service-references/CustomerAuthenticationService/wsdl/localhost_8080/pws-hw22/CustomerAuthenticationService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/pws-hw22/TicketAppraiser?wsdl" uri="xml-resources/web-service-references/TicketAppraiser/wsdl/localhost_8080/pws-hw22/TicketAppraiser.wsdl"/>
@@ -12,4 +10,6 @@
     <system systemId="http://localhost:8080/pws-hw22/TicketBooking?xsd=1" uri="xml-resources/web-service-references/TicketBooking/wsdl/localhost_8080/pws-hw22/TicketBooking.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/pws-hw22/TicketIssue?wsdl" uri="xml-resources/web-service-references/TicketIssue/wsdl/localhost_8080/pws-hw22/TicketIssue.wsdl"/>
     <system systemId="http://localhost:8080/pws-hw22/TicketIssue?xsd=1" uri="xml-resources/web-service-references/TicketIssue/wsdl/localhost_8080/pws-hw22/TicketIssue.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/pws-hw22/FlightFinder?wsdl" uri="xml-resources/web-service-references/FlightFinder/wsdl/localhost_8080/pws-hw22/FlightFinder.wsdl"/>
+    <system systemId="http://localhost:8080/pws-hw22/FlightFinder?xsd=1" uri="xml-resources/web-service-references/FlightFinder/wsdl/localhost_8080/pws-hw22/FlightFinder.xsd_1.xsd"/>
 </catalog>

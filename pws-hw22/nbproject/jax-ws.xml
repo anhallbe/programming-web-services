@@ -13,11 +13,11 @@
     <service name="PriceOutput">
       <implementation-class>pws.hw2.PriceOutput</implementation-class>
     </service>
-    <service name="TicketBooking">
-      <implementation-class>pws.hw2.TicketBooking</implementation-class>
-    </service>
     <service name="TicketIssue">
       <implementation-class>pws.hw2.TicketIssue</implementation-class>
+    </service>
+    <service name="TicketBooking">
+      <implementation-class>pws.hw2.TicketBooking</implementation-class>
     </service>
   </services>
   <clients>

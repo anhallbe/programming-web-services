@@ -13,7 +13,7 @@ import javax.jws.WebService;
  *
  * @author andreas
  */
-@WebService(serviceName = "TicketBooking", portName = "TicketBookingPort"/*, endpointInterface = "pws.hw2.TicketBooking", targetNamespace = "http://hw2.pws/", wsdlLocation = "WEB-INF/wsdl/TicketBooking/TicketBooking.wsdl"*/)
+@WebService(serviceName = "TicketBooking", portName = "TicketBookingPort", endpointInterface = "pws.hw2.TicketBooking", targetNamespace = "http://hw2.pws/", wsdlLocation = "WEB-INF/wsdl/TicketBooking/TicketBooking.wsdl")
 public class TicketBooking {
 
     public java.util.List<pws.hw2.Ticket> ticketBooking(java.lang.String creditCard, pws.hw2.Itinerary itinerary) {
@@ -22,7 +22,11 @@ public class TicketBooking {
         for(pws.hw2.Flight flight : itinerary.getFlights()) {
             pws.hw2.Ticket ticket = new pws.hw2.Ticket();
             ticket.setFlight(flight);
-            ticket.setBooked(flight.book());
+            if(flight.getSeats() > 1) {
+                ticket.setBooked(true);
+                flight.setSeats(flight.getSeats()-1);
+            } else
+                ticket.setBooked(false);
             tickets.add(ticket);
         }
         
