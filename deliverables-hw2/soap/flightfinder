@@ -1,0 +1,188 @@
+Request:
+<?xml version="1.0" encoding="UTF-8"?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <S:Body>
+        <ns2:possibleItineraries xmlns:ns2="http://hw2.pws/">
+            <departure>Stockholm</departure>
+            <destination>Oslo</destination>
+        </ns2:possibleItineraries>
+    </S:Body>
+</S:Envelope>
+
+Response:
+<?xml version="1.0" encoding="UTF-8"?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <S:Body>
+        <ns2:possibleItinerariesResponse xmlns:ns2="http://hw2.pws/">
+            <return>
+                <flights>
+                    <from>Stockholm</from>
+                    <ID>51</ID>
+                    <price>98</price>
+                    <seats>25</seats>
+                    <to>Oslo</to>
+                </flights>
+            </return>
+            <return>
+                <flights>
+                    <from>Stockholm</from>
+                    <ID>9</ID>
+                    <price>76</price>
+                    <seats>87</seats>
+                    <to>Munich</to>
+                </flights>
+                <flights>
+                    <from>Munich</from>
+                    <ID>39</ID>
+                    <price>84</price>
+                    <seats>39</seats>
+                    <to>Miami</to>
+                </flights>
+                <flights>
+                    <from>Miami</from>
+                    <ID>96</ID>
+                    <price>74</price>
+                    <seats>14</seats>
+                    <to>Austin</to>
+                </flights>
+                <flights>
+                    <from>Austin</from>
+                    <ID>78</ID>
+                    <price>85</price>
+                    <seats>33</seats>
+                    <to>Las Vegas</to>
+                </flights>
+                <flights>
+                    <from>Las Vegas</from>
+                    <ID>97</ID>
+                    <price>91</price>
+                    <seats>47</seats>
+                    <to>San Fransisco</to>
+                </flights>
+                <flights>
+                    <from>San Fransisco</from>
+                    <ID>28</ID>
+                    <price>94</price>
+                    <seats>99</seats>
+                    <to>Denver</to>
+                </flights>
+                <flights>
+                    <from>Denver</from>
+                    <ID>52</ID>
+                    <price>69</price>
+                    <seats>32</seats>
+                    <to>Los Angeles</to>
+                </flights>
+                <flights>
+                    <from>Los Angeles</from>
+                    <ID>2</ID>
+                    <price>12</price>
+                    <seats>51</seats>
+                    <to>New York</to>
+                </flights>
+                <flights>
+                    <from>New York</from>
+                    <ID>51</ID>
+                    <price>32</price>
+                    <seats>90</seats>
+                    <to>London</to>
+                </flights>
+                <flights>
+                    <from>London</from>
+                    <ID>85</ID>
+                    <price>73</price>
+                    <seats>74</seats>
+                    <to>Berlin</to>
+                </flights>
+                <flights>
+                    <from>Berlin</from>
+                    <ID>26</ID>
+                    <price>41</price>
+                    <seats>39</seats>
+                    <to>Paris</to>
+                </flights>
+                <flights>
+                    <from>Paris</from>
+                    <ID>80</ID>
+                    <price>38</price>
+                    <seats>13</seats>
+                    <to>Oslo</to>
+                </flights>
+            </return>
+            <return>
+                <flights>
+                    <from>Stockholm</from>
+                    <ID>81</ID>
+                    <price>51</price>
+                    <seats>40</seats>
+                    <to>Berlin</to>
+                </flights>
+                <flights>
+                    <from>Berlin</from>
+                    <ID>26</ID>
+                    <price>41</price>
+                    <seats>39</seats>
+                    <to>Paris</to>
+                </flights>
+                <flights>
+                    <from>Paris</from>
+                    <ID>80</ID>
+                    <price>38</price>
+                    <seats>13</seats>
+                    <to>Oslo</to>
+                </flights>
+            </return>
+            <return>
+                <flights>
+                    <from>Stockholm</from>
+                    <ID>6</ID>
+                    <price>68</price>
+                    <seats>74</seats>
+                    <to>Tokyo</to>
+                </flights>
+                <flights>
+                    <from>Tokyo</from>
+                    <ID>57</ID>
+                    <price>84</price>
+                    <seats>50</seats>
+                    <to>Los Angeles</to>
+                </flights>
+                <flights>
+                    <from>Los Angeles</from>
+                    <ID>2</ID>
+                    <price>12</price>
+                    <seats>51</seats>
+                    <to>New York</to>
+                </flights>
+                <flights>
+                    <from>New York</from>
+                    <ID>51</ID>
+                    <price>32</price>
+                    <seats>90</seats>
+                    <to>London</to>
+                </flights>
+                <flights>
+                    <from>London</from>
+                    <ID>85</ID>
+                    <price>73</price>
+                    <seats>74</seats>
+                    <to>Berlin</to>
+                </flights>
+                <flights>
+                    <from>Berlin</from>
+                    <ID>26</ID>
+                    <price>41</price>
+                    <seats>39</seats>
+                    <to>Paris</to>
+                </flights>
+                <flights>
+                    <from>Paris</from>
+                    <ID>80</ID>
+                    <price>38</price>
+                    <seats>13</seats>
+                    <to>Oslo</to>
+                </flights>
+            </return>
+        </ns2:possibleItinerariesResponse>
+    </S:Body>
+</S:Envelope>

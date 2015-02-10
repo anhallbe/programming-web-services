@@ -1,0 +1,20 @@
+Request:
+<?xml version="1.0" encoding="UTF-8"?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <S:Body>
+        <ns2:authenticate xmlns:ns2="http://hw2.pws/">
+            <userID>user1</userID>
+            <password>password1</password>
+        </ns2:authenticate>
+    </S:Body>
+</S:Envelope>
+
+Response:
+<?xml version="1.0" encoding="UTF-8"?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <S:Body>
+        <ns2:authenticateResponse xmlns:ns2="http://hw2.pws/">
+            <return>true</return>
+        </ns2:authenticateResponse>
+    </S:Body>
+</S:Envelope>
