@@ -14,3 +14,49 @@ To run the services (server side):
 To run the client:
 	cd client
 	java -cp . pws.hw2.FlightServiceTestClient
+
+_______________________________________________________________________
+A note on architecture:
+The services are deployed on a lightweight web server within the JVM, which can be accessed 
+at http://localhost:8082/NameOfService/nameofservice. The following services are deployed:
+
+	1. CustomerAuthenticationService - Simply asks for a username (user1) and password (password1). 
+		The service responds with a boolean indicating whether the caller was authenticated or not. 
+		This service should ideally be a middle-man between the caller and the other services. 
+		This could be implemented by sending user credentials in a SOAP header. But that is not the way I did it..
+
+	2. FlightFinder - Given a departure and a destination, the service will find all possible routes 
+		without visiting the same destination twice. The service responds with a list of itineraries (routes, lists of flights).
+
+	3. TicketAppraiser - This service calculates the number of available seats for a given itinerary, 
+		and can calculate the price of the trip.
+
+	4. PriceOutput - This service will output the price of multiple itineraries, which can be used to 
+		compare the prices of different ways of reaching the destination.
+
+	5. TicketBooking - Lets the caller book all the tickets for a trip. The seat status of the flights 
+			will be adjusted accordingly. Although since there is no persistant storage on the 
+			server-side, making multiple booking requests from different clients won't cause a plane to run out of seats...
+
+	6. TicketIssue - Issues a ticket by first checking if it is properly booked.
+
+	-------------------------			------------------------------------------------------------------------
+	|	Client VM	|			|		     		Server VM				|
+	|_______________________|			|_______________________________________________________________________|
+	|			|			|									|
+	|			|			|									|
+	|testServices()	(MAIN)	|			|bool CustomerAuthenticationService (String userID, String password)	|
+	|			|			|									|
+	|			|			|List<Itinerary> FlightFinder	(String from, String to)		|
+	|			|			|									|
+	|			|			|int TicketAppraiser.availableSeats (Itinerary i)			|
+	|			|			|									|
+	------------------------			|int TicketAppraiser.ticketPrice (Itinerary i)				|
+							|									|
+							|List<int> PriceOutput (List<Itinerary>)				|
+							|									|
+							|List<Ticket> TicketBooking (String creditcard, Itinerary i)		|
+							|									|
+							|bool TicketIssue (Ticket t)						|
+							|									|
+							------------------------------------------------------------------------
