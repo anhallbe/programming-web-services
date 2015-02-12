@@ -2,6 +2,7 @@ package hw3.client;
 
 import hw3.jaxb.Flight;
 import hw3.jaxb.Route;
+import hw3.jaxb.Ticket;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,7 +34,7 @@ public class RESTClient {
 		
 		
 		//___________TASK 2 FLIGHTFINDER__________
-		System.out.println("Testing FlightFinder service...");
+		System.out.println("\nTesting FlightFinder service...");
 		WebResource flightfinder = client.resource("http://localhost:8080/HW3/rest/findflights/Stockholm/Madrid/" + authToken);
 		GenericType<List<Route>> generic = new GenericType<List<Route>>() {};
 		List<Route> routes = flightfinder.accept(MediaType.APPLICATION_XML).get(generic);
@@ -48,7 +49,7 @@ public class RESTClient {
 		
 		
 		//___________TASK 3 TICKET AVAILABILITY____
-		System.out.println("Testing ticket availibility service...");
+		System.out.println("\nTesting ticket availibility service...");
 		MultivaluedMap<String, String> flightIDs = new MultivaluedMapImpl();
 		Route testRoute = routes.get(0);
 		List<String> ids = new ArrayList<String>();
@@ -66,14 +67,14 @@ public class RESTClient {
 		
 		
 		//___________TASK 4 PRICE OUTPUT_____________
-		System.out.println("Testing price output service...");
+		System.out.println("\nTesting price output service...");
 		WebResource priceRes = client.resource("http://localhost:8080/HW3/rest/ticket/prices/Stockholm/Madrid/" + authToken);
 		String output = priceRes.accept(MediaType.TEXT_PLAIN).get(String.class);
 		System.out.println("Result: " + output);
 		
 		
 		//___________TASK 5 TICKET BOOKING_________________
-		System.out.println("Testing ticket booking service...");
+		System.out.println("\nTesting ticket booking service...");
 		List<String> ticketRefs = new ArrayList<String>();
 		for(Flight flight : routes.get(0).getFlights()) {
 			String id = "" + flight.getId();
@@ -85,7 +86,14 @@ public class RESTClient {
 		
 		
 		//___________TASK 6 TICKET ISSUING_________________
-		System.out.println("Testing ticket booking service...");
+		System.out.println("\nTesting ticket booking service...");
+		for(String ref : ticketRefs) {
+			WebResource ticketIssuer = client.resource("http://localhost:8080/HW3/rest/ticket/issue/" + ref + "/" + authToken);
+			GenericType<Ticket> gen = new GenericType<Ticket>() {};
+			Ticket ticket = ticketIssuer.accept(MediaType.APPLICATION_XML).get(gen);
+			System.out.println("Issued ticket for flight " + ticket.getFlightID());
+		}
 		
+		System.out.println("Done!");
 	}
 }

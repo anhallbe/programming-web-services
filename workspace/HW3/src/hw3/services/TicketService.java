@@ -91,4 +91,21 @@ public class TicketService {
 			return "INVALID AUTHORIZATION TOKEN";
 		}
 	}
+	
+	@Path("/issue/{ref}/{authToken}")
+	@GET
+	public Ticket issueTicket(@PathParam("ref") String ref, @PathParam("authToken") String authToken) {
+		Ticket ticket = null;
+		if(AuthStore.tokens.contains(authToken)) {
+			Ticket temp = TicketStore.tickets.get(Long.parseLong(ref));
+			if(temp == null || temp.isIssued())
+				return null;
+			else {
+				temp.setIssued(true);
+				ticket = temp;
+			}
+		} else
+			System.err.println("INVALID AUTHORIZATION TOKEN");
+		return ticket;
+	}
 }
